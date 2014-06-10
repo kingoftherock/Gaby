@@ -1,0 +1,200 @@
+h2
+{
+    font-weight: 100;
+    text-align: center;
+}
+#navegacion
+{
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    width: 530px;
+}
+#navegacion a
+{
+    color: #0a7ec0;
+    background: #ddd;
+    display: inline-block;
+    margin: 10px 10px;
+    padding: 20px;
+    text-align: center; 
+    vertical-align: middle;
+    float: left;
+    width: 200px;
+    text-decoration: none;
+}
+#navegacion #activo
+{
+    color: #f7f7f7;
+    background: #444;
+}
+table
+{
+    width: 100%;
+    text-align: center;
+}
+th
+{
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    color: #555;
+}
+tr td a
+{
+    color: #3b3b3b;
+    text-decoration: none;
+}
+td
+{
+    padding: 9px 0;
+}
+tr:hover
+{
+    color: #398bce;
+    background: #f5f5f5;
+}
+span
+{
+	font-weight: normal;
+}
+.cuestionario
+{
+	color: #444;
+	background: #efefef;
+	height: 150px;
+	position: relative;
+	margin: 2em 0;
+}
+.izquierda
+{
+	background: #f7f7f7;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 590px;
+}
+.izquierda h3
+{
+	font-weight: 100;
+	margin: 0;
+	padding: .5em 1em;
+	text-align: center;
+}
+
+.izquierda p
+{
+	text-align: center;
+}
+
+.cuestionario #activar_cuestionarios
+{
+	background: #efefef;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 190px;
+}
+.cuestionario form p
+{
+	text-align: center;
+}
+#marcarCasilla
+{
+	display: block;
+    
+}
+.Switch
+{
+	margin-left: 42px;
+}
+#botonEnviar
+{
+    border: none;
+    background: #3495ce;
+    color: white;
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    width: 100%;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    padding: 15px 0;
+    position: absolute;
+    bottom: 0;
+}
+
+/* Cambio de numero de preguntas a aplicar */
+
+#primero_form
+{
+    background-color: #f7f7f7;
+    display: block;
+    float: left;
+    margin-top: 0; 
+    width: 400px;
+    margin-left: 95px;  
+}
+
+#primero_form p
+{
+    float: left;
+    margin-top: 0;
+    width: 400px;
+}
+
+#cambiar_preguntas
+{
+    background: none;
+    border: none;
+}
+
+#cambiar_preguntas img
+{
+    width: 18px;
+    opacity: 0.5;
+}
+
+#input_cambiar
+{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    background-color: #f7f7f7;
+    box-shadow: none;
+    border: 0;
+    border-bottom: 2px dotted #0a7ec0;
+    font-size: 14px;
+    font-weight: 100;
+    margin: 5px 0;
+    padding: 1px;
+    width: 40px;
+}
+
+#input_cambiar:focus
+{
+    outline: none;
+}
+
+#cambiar_algo
+{
+    border: none;
+    background: #3495ce;
+    color: white;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 12px;
+    margin-left: 1em;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px 0;
+    width: 75px;
+    
+    border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+}

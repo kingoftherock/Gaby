@@ -1,0 +1,75 @@
+{% extends 'academia.html' %}
+    {% block estilos %} 
+        <link rel="stylesheet" href="{{STATIC_URL}}css/academiaEstadisticas.css" />
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    {% if Cuestionarios %}
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Cuestionario', 'Aprobados', 'Reprobados'],
+          {% for elementos in Cuestionarios %}
+          ['{{elementos.cuestionario}}',  {{elementos.aprobados}}, {{elementos.reprobados}}],
+          {% endfor %}
+        ]);
+
+        var options = {
+          title: 'Aprobados/Reprobados',
+          vAxis: {title: 'Cuestionario',  titleTextStyle: {color: '#444'}},
+          colors: ['#0099CC', '#444'],
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+    {% endif %}
+    {% endblock %}
+    {% block menu %}
+        <li><a href='/Gaby/Academia/Cuestionarios'>Cuestionarios</a></li>
+        <li><a href="/Gaby/Academia/Maestros">Maestros</a></li>
+        <li><a href="/Gaby/Academia/Estadisticas" class="activo">Estadísticas</a></li>
+        <li><a href="/Gaby/Academia/Alumnos">Alumnos</a></li>
+        <li><a href="/Gaby/Academia/Material">Material</a></li>
+    {% endblock %}
+    {% block central %}
+        
+        <h3 id="primero">Estadísticas</h3>
+        <div id="buscarOpciones">
+            <ul>
+                <li><a href="/Gaby/Academia/Estadisticas/">Por Alumno</a></li>
+                <li><a href="/Gaby/Academia/Estadisticas/Grupo" >Por Grupo</a></li>
+                <li><a href="/Gaby/Academia/Estadisticas/Maestro">Por Maestro</a></li>
+                <li><a href="/Gaby/Academia/Estadisticas/Cuestionario" id="activo">Por Cuestionario</a></li>
+            </ul>
+        </div>
+        <div id="buscarPregunta">
+            <form method="GET">
+                <input type="text" id="BuscarPregunta" placeholder="Buscar cuestionario" value="{{busqueda}}" name="busqueda">
+                <input type="submit" id="BuscarPreguntaBoton" value="Buscar" name="Buscar">
+            </form>    
+        </div>
+        {% if resultados %}
+        <table>
+        <thead>
+            <tr>
+                <th>Nombre del cuestionario</th>
+                <th>Profesor</th>
+                <th>Promedio</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for x in resultados %}
+            <tr>
+                <td><a href="/Gaby/Academia/Estadisticas/Grupo/{{alumno.alumno.alumno.id}}">{{x.grupo.nombre}}</a></td>
+                <td>{{x.grupo.academia_profesor.profesor}}</td>
+                <td>{{x.promedio|floatformat}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+        {% else %}
+        <div id="chart_div" style="width: 900px; height: 500px;"></div>
+        {% endif %}
+    {% endblock %}

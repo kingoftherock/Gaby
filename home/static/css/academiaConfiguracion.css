@@ -1,0 +1,43 @@
+h2
+{
+    font-size: 27px;
+    font-weight: 100;
+    padding: 5px 10px;
+    text-align: center;
+}
+h2:first-child
+{
+    font-size: 30px;
+    font-weight: 100;
+    padding: 0px 10px;
+    margin: 0;
+}
+h2:first-child span
+{
+    font-weight: normal;
+}
+h3:first-child button
+{
+    margin-left: 10px;
+    background: none;
+    border: none;
+}
+h3:first-child button img
+{
+    width: 18px;
+    opacity: 0.5;
+}
+h3:first-child button img:hover
+{
+    opacity: 1;
+    
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+button:focus
+{
+	outline: none;
+}

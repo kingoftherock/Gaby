@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Gaby - Alumno</title>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{STATIC_URL}}css/normalize.css" />
+    <link rel="stylesheet" href="{{STATIC_URL}}css/alumno.css" />
+    <link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico" type="image/x-icon" />
+	{% block estilos %}{% endblock %}
+</head>
+<body>
+    <div id="contenedor">
+	   <header>
+            <h1 id="gaby">Gaby</h1>
+            <p>Bienvenido <span>{{user}}</span></p>
+        </header>
+        
+    </div>
+</html>

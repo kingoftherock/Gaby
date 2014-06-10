@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Gaby-Login</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="{{STATIC_URL}}css/normalize.css" />
+    <link rel="stylesheet" href="{{STATIC_URL}}css/loginAdmins.css" />
+    <link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="{{STATIC_URL}}css/avgrund.css">
+    <script type="text/javascript" src="{{STATIC_URL}}js/avgrund.js"></script>
+    <script>
+		function openDialog()
+        {
+            Avgrund.show( "#default-popup" );
+		}
+		function closeDialog()
+        {
+            Avgrund.hide();
+		}
+	</script>
+</head>
+<body>
+    <aside id="default-popup" class="avgrund-popup">
+		<h2>Llene estos datos por favor.</h2>
+        <p>¡Únicamente registro de academias!</p>
+		<form method="POST" action="/registrar">
+            {% csrf_token %}
+            <input name="username" type="text" placeholder="Nombre de Usuario" required />
+            <input name="email" type="email" placeholder="Correo del Usuario" required />
+            <input name="first_name" type="text" placeholder="Nombre de la academia" required />
+            <input name="password1" type="password" placeholder="Contraseña" required />
+            <input name="password" type="password" placeholder="Repita contraseña" required />
+            <input type="submit" onclick="javascript:closeDialog();" value="Registrarme">
+        </form>
+        <button onclick="javascript:closeDialog();">Cancelar</button>
+    </aside>
+    <article id="contenedor" class="avgrund-contents">
+        <h1>Gaby</h1>
+        {% if mensaje %}
+            <p id="saludo" style="color: #215f8b;">¡{{mensaje}}!</p>
+        {% elif mensaje %}
+            <p id="saludo" style="color: #215f8b;">¡{{mensaje}}!</p>
+        {% else %}
+            <p id="saludo">¡Hola de nuevo!</p>
+        {% endif %}
+        <form method="POST" action="/entrado">
+            {% csrf_token %}
+            <input name="usuario" type="text" placeholder="Usuario" required/>
+            <input name="contrasenna" type="password" placeholder="Contraseña" required/>
+            <input id="botonEntrar" type="submit" value="Entrar">
+        </form>
+        <p class="lastNotLast" >¿No tienes cuenta? <span><button onclick="javascript:openDialog();">Regístrate</button></span></p>
+    </article>
+    <div class="avgrund-cover" id="cover"></div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Alumno | Academias
+    </title>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{STATIC_URL}}css/normalize.css">
+    <link rel="stylesheet" href="{{STATIC_URL}}css/alumnoIndex.css">
+{% block estilos %}{% endblock %}
+</head>
+<body>
+   <header class="row">
+        <h1 id="gaby">Gaby</h1>
+        <p>Bienvenido <span>{{user}}</span></p>
+        <a href="/logOut">Cerrar Sesión</a>
+    </header>
+    <div id="contenedor">
+        <div id="academias">
+            {% if academias %}
+            <h3>Tus academias:</h3>
+            {% endif %}
+            {% for academia in academias %}
+            <div class="columna">
+                <h3>{{academia}}</h3>
+                <p class="fechaCreacion">Usuario de academia: <span>{{academia.academia.username}}</span></p>
+                <a class="entrar" href="Academia/{{academia.id}}" >Entrar</a>
+            </div>
+            {% empty %}
+            <h3><p>Bienvenido, no estás inscrito a ninguna academia.</p> ¡Inscribete!</h3>
+            {% endfor %}
+        </div>
+        <div id="inscribirse">
+            <p>Encuentra tu academia</p>
+            <a id="inscribir" href="/Gaby/Alumno/Inscribirse">Inscribirme</a>
+        </div>           
+
+    </div>
+</body>
+</html>

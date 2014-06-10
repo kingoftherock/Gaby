@@ -1,0 +1,44 @@
+{% extends 'profesor.html' %}
+    {% block estilos %} 
+        <link rel="stylesheet" href="{{STATIC_URL}}css/profesorGrupoAlumnos.css" />
+    {% endblock %}
+    {% block menu %}
+        <li><a href='/Gaby/Profesor/Cuestionarios'>Cuestionarios</a></li>
+        <li><a href="/Gaby/Profesor/Grupos" class="activo">Grupos</a></li>
+        <li><a href="/Gaby/Profesor/Estadisticas">Estadísticas</a></li>
+        <li><a href="/Gaby/Profesor/Material">Material</a></li>
+    {% endblock %}
+    {% block central %}
+    <h2>{{grupo.nombre}}</h2>
+    <div id="navegacion">
+        <a href="/Gaby/Profesor/Grupos/Grupo/{{grupo.id}}/Cuestionarios">Cuestionarios</a>
+        <a id="activo" href="/Gaby/Profesor/Grupos/Grupo/{{grupo.id}}/Alumnos">Alumnos</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Apellido</th>
+                <th>Nombre</th>
+                <th>Usuario</th>
+                <th>Promedio</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for alumno in Alumnos %}
+            <tr>
+                <td>{{alumno.alumno.alumno.last_name}}</td>
+                <td>{{alumno.alumno.alumno.first_name}}</td>
+                <td>{{alumno.alumno.alumno.username}}</td>
+                <td>{{alumno.promedio}}</td>
+            </tr>
+            {% empty %}
+                <tr>
+                    <td>-</td>
+                    <td>No se han registrado alumnos aún</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}

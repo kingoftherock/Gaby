@@ -1,0 +1,23 @@
+{% extends 'profesor.html' %}
+    {% block estilos %} 
+        <link rel="stylesheet" href="{{STATIC_URL}}css/profesorGrupos.css" />
+    {% endblock %}
+    {% block menu %}
+        <li><a href='/Gaby/Profesor/Cuestionarios'>Cuestionarios</a></li>
+        <li><a href="/Gaby/Profesor/Grupos" class="activo">Grupos</a></li>
+        <li><a href="/Gaby/Profesor/Estadisticas">Estadísticas</a></li>
+        <li><a href="/Gaby/Profesor/Material">Material</a></li>
+    {% endblock %}
+    {% block central %}
+    <h2>Grupos</h2>
+    <p id="crearCuestionarioPrincipal"><a href="/Gaby/Profesor/Grupos/Nuevo">Crear Grupo</a></p>
+	<div id="grupos">
+        {% for grupo in grupos %}
+        <div class="grupo" method="post">
+            {% csrf_token %}
+            <a name="grupo" class="grupoNombre" href="Grupo/{{grupo.id}}/Alumnos">{{grupo.nombre}}</a>
+            <p class="labelProfe">Profesor: <span>{{grupo.academia_profesor.profesor.profesor.first_name}} {{grupo.academia_profesor.profesor.profesor.last_name}}</span></p>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock %}

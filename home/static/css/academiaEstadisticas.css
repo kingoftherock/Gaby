@@ -1,0 +1,156 @@
+h3
+{
+    font-weight: 100;
+    font-size: 1.5em;
+    text-align: center;
+}
+h3 img
+{
+    width: 18px;
+    margin-left: 10px;
+    opacity: 0.5;
+}
+#buscarPregunta
+{
+    width: 100%;
+    margin: 20px 0;
+}
+#BuscarPregunta
+{
+    width: 600px;
+}
+input
+{
+    display: inline-block;
+    margin: 0;
+    width: 152px
+}
+#BuscarPreguntaBoton
+{
+    border: none;
+}
+input
+{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: 0;
+    border-bottom: 2px dotted #0a7ec0;
+    font-size: 14px;
+    font-weight: 100;
+    margin: 5px 0;
+    padding: 10px;
+}
+input:focus
+{
+    outline: none;
+}
+#buscarOpciones
+{
+    margin: 30px 50px;
+    padding: 0;
+}
+#buscarOpciones ul
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#buscarOpciones ul li
+{
+    display: inline-block;
+}
+#buscarOpciones ul li a
+{
+    color: #398bce;
+    background: #f5f5f5;
+    display: block;
+    padding: .8em 1.3em;
+    margin: 0 15px;
+    text-decoration: none;
+    
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+#buscarOpciones ul li a:hover
+{
+    background: #444;
+    color: #fff;
+}
+#buscarOpciones ul li #activo
+{
+    background: #444;
+    color: #fff;
+}
+#chart_div
+{
+    margin: 0 auto;
+    padding: 0;
+}
+.maestroCaja
+{
+    float: left;
+    background-color: #f5f5f5;
+    color: #444;
+    width: 300px;
+    margin: 1em 35px;
+    text-decoration: none;
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+}
+.maestroCaja:hover
+{
+    color: #398bce;
+}
+.maestroCaja h2
+{
+    text-align: center;
+}
+.maestroCaja h2 img
+{
+    width: 18px;
+    margin-left: 10px;
+    opacity: 0.5;
+}
+.maestroCaja p
+{
+    margin-left: 10px;
+}
+span
+{
+    font-weight: normal;
+}
+table
+{
+    width: 100%;
+    text-align: center;
+}
+th
+{
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    color: #555;
+}
+tr td a
+{
+    color: #3b3b3b;
+    text-decoration: none;
+}
+td
+{
+    padding: 9px 0;
+}
+tr:hover
+{
+    color: #398bce;
+    background: #f5f5f5;
+}

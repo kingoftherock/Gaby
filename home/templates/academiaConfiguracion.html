@@ -1,0 +1,20 @@
+{% extends 'academia.html' %}
+    {% block estilos %} 
+        <link rel="stylesheet" href="{{STATIC_URL}}css/academiaConfiguracion.css" />
+    {% endblock %}
+    {% block menu %}
+        <li><a href='/Gaby/Academia/Cuestionarios'>Cuestionarios</a></li>
+        <li><a href="/Gaby/Academia/Maestros">Maestros</a></li>
+        <li><a href="/Gaby/Academia/Estadisticas">Estadísticas</a></li>
+        <li><a href="/Gaby/Academia/Alumnos">Alumnos</a></li>
+        <li><a href="/Gaby/Academia/Material">Material</a></li>
+    {% endblock %}
+    {% block central %}
+        <h2>Datos personales</h2>
+        <form method='POST' id="primero_form">
+            {% csrf_token %}
+            <div id="primero_div">
+                <h3>Hsasd<button id="botonLapicito"><img src="{{STATIC_URL}}img/lapiz.png"></button></h3>
+            </div>
+        </form>
+    {% endblock %}

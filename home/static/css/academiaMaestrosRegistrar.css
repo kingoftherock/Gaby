@@ -1,0 +1,83 @@
+h2
+{
+    font-weight: 100;
+    text-align: center;
+}
+h3
+{
+    font-size: 16px;
+    font-weight: 100;
+    text-align: center;
+}
+h3 span
+{
+    border-bottom: 1px dashed #0a7ec0;
+    font-weight: normal;
+    margin-left: 10px;
+}
+#navegacion
+{
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    width: 530px;
+}
+#navegacion a
+{
+    color: #0a7ec0;
+    background: #ddd;
+    display: inline-block;
+    margin: 10px 10px;
+    padding: 20px;
+    text-align: center; 
+    vertical-align: middle;
+    float: left;
+    width: 200px;
+    text-decoration: none;
+}
+#navegacion #activo
+{
+    color: #f7f7f7;
+    background: #444;
+}
+input
+{
+    border: 1px #c1c1c1 solid;
+	height: 50px;
+	font-size: 18px;
+	display: block;
+	margin: 0 auto 18px auto;
+	font-weight: 100;
+	width: 50%;
+	text-align: center;
+	border-radius: 3px;
+	color: #2d2d2d;
+	outline: none;
+	font-family: inherit;
+	letter-spacing: normal;
+	word-spacing: normal;
+}
+input:focus
+{
+    outline: none;
+}
+#submit
+{
+    border: none;
+    background: #444;
+    color: white;
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    padding: 20px 0px;
+    margin: 0 auto;
+    width: 30%;
+    
+    border-radius: 2px 2px 2px 2px;
+    -moz-border-radius: 2px 2px 2px 2px;
+    -webkit-border-radius: 2px 2px 2px 2px;
+}

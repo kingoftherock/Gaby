@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Gaby - Alumno</title>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{STATIC_URL}}css/normalize.css" />
+    <link rel="stylesheet" href="{{STATIC_URL}}css/alumnoInscripcionAcademiaEspecifico.css" />
+    <link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+    <div id="contenedor">
+	   <header>
+            <a href="/Gaby/Alumno/" style="position:absolute; left:0; border:none; top:18px;"><h1 id="gaby">Gaby</h1></a>
+            <p>Bienvenido <span>{{user}}</span></p>
+        </header>
+        <div id="central">
+            <h2>Elige tu grupo!</h2>
+            <p id="nombreAcademia">{{academia.academia.first_name}}</p>
+            <p id="usuarioAcademia">Usuario: <span>{{academia.academia.username}}</span></p>
+            <div id="grupos">
+            {% for grupo in grupos %}
+                {% if grupo in gruposSuscritos %}
+                <form class="grupo" method="post">
+                    {% csrf_token %}
+                    <input name="grupo" class="grupoNombre suscrito" type="submit" value="{{grupo.nombre}}"><br>
+                    <label class="labelProfe">Profesor: <span>{{grupo.academia_profesor.profesor.profesor.first_name}} {{grupo.academia_profesor.profesor.profesor.last_name}}</span></label>
+                </form>
+                {% else %}
+                <form class="grupo" method="post">
+                    {% csrf_token %}
+                    <input name="grupo" class="grupoNombre" type="submit" value="{{grupo.nombre}}"><br>
+                    <label class="labelProfe">Profesor: <span>{{grupo.academia_profesor.profesor.profesor.first_name}} {{grupo.academia_profesor.profesor.profesor.last_name}}</span></label>
+                </form>
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</html>

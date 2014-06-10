@@ -1,0 +1,69 @@
+{% extends 'academia.html' %}
+    {% block estilos %} 
+        <link rel="stylesheet" href="{{STATIC_URL}}css/academiaEstadisticas.css" />
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        {% if not cuestionarios|length == 0%}
+        <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+            ['Cuestionario', 'Calificacion'],
+            {% for elemento in cuestionarios %}
+                ['{{elemento.cuestionario}} - {{elemento.grupo}}', {{elemento.calificacion}}],
+            {% endfor %}
+            ]);
+
+            var options = {
+            title: 'Resultados de {{alumno.alumno.first_name}} en los cuestionarios',
+            titleTextStyle: {
+                color: 'black',
+                fontName: 'Lato',
+                bold: false,
+                fontSize: 20},
+            colors: ['#0099CC'],
+            is3D: false,
+            fontName: 'Lato',
+            fontSize: 14,
+            curveType: 'none',
+            animation: {
+                easing: 'linear',
+                duration: 1000,
+            },
+            chartArea: {
+                left: 55,
+            },
+            vAxis: {
+                maxValue: 10,
+                minValue: 0,
+            },
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+        </script>
+        {% endif %}
+    {% endblock %}
+    {% block menu %}
+        <li><a href='/Gaby/Academia/Cuestionarios'>Cuestionarios</a></li>
+        <li><a href="/Gaby/Academia/Maestros">Maestros</a></li>
+        <li><a href="/Gaby/Academia/Estadisticas" class="activo">Estadísticas</a></li>
+        <li><a href="/Gaby/Academia/Alumnos">Alumnos</a></li>
+        <li><a href="/Gaby/Academia/Material">Material</a></li>
+    {% endblock %}
+    {% block central %}
+        <h3 id="primero">Estadísticas</h3>
+        <div id="buscarOpciones">
+            <ul>
+                <li><a href="/Gaby/Academia/Estadisticas/" id="activo">Por Alumno</a></li>
+                <li><a href="/Gaby/Academia/Estadisticas/Grupo">Por Grupo</a></li>
+                <li><a href="/Gaby/Academia/Estadisticas/Maestro">Por Maestro</a></li>
+                <li><a href="/Gaby/Academia/Estadisticas/Cuestionario">Por Cuestionario</a></li>
+            </ul>
+        </div>
+        <p>Alumno: <span>{{alumno.alumno.first_name}} {{alumno.alumno.last_name}}</span></p>
+        <p>Usuario: <span>{{alumno.alumno.username}}</span></p>
+        <p>Promedio: <span>{{alumnoAcademia.calificacion}}</span></p>
+        <div id="chart_div"></div>
+    {% endblock %}

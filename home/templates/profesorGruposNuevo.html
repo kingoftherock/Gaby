@@ -1,0 +1,18 @@
+{% extends 'profesor.html' %}
+    {% block estilos %} 
+        <link rel="stylesheet" href="{{STATIC_URL}}css/profesorGruposNuevo.css" />
+    {% endblock %}
+    {% block menu %}
+        <li><a href='/Gaby/Profesor/Cuestionarios'>Cuestionarios</a></li>
+        <li><a href="/Gaby/Profesor/Grupos" class="activo">Grupos</a></li>
+        <li><a href="/Gaby/Profesor/Estadisticas">Estadísticas</a></li>
+        <li><a href="/Gaby/Profesor/Material">Material</a></li>
+    {% endblock %}
+    {% block central %}
+        <h2>Crear grupo</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="textarea" name="nombre" placeholder="Nombre del Grupo" required/>
+            <input type="submit" id="submit" value="Crear">
+        </form>
+    {% endblock %}

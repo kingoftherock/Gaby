@@ -1,0 +1,127 @@
+h2
+{
+    font-weight: 100;
+    text-align: center;
+}
+#navegacion
+{
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    width: 530px;
+}
+#navegacion a
+{
+    color: #0a7ec0;
+    background: #ddd;
+    display: inline-block;
+    margin: 10px 10px;
+    padding: 20px;
+    text-align: center; 
+    vertical-align: middle;
+    float: left;
+    width: 200px;
+    text-decoration: none;
+}
+#navegacion #activo
+{
+    color: #f7f7f7;
+    background: #444;
+}
+span
+{
+    font-weight: normal;
+}
+.grupos
+{
+    padding: 0;
+    margin: 0;
+    width: 385px;
+}
+.grupos ul 
+{
+    list-style: none;
+    margin: .5em 0;
+    padding: 0;
+}
+.grupos p
+{
+    margin: 0;
+    padding: .5em 1em;
+}
+.grupos ul li
+{
+    display: inline-block;
+    margin: 10px;
+    padding: 0;
+}
+.grupos ul li a
+{
+    background: #f5f5f5;
+    color: #398bce;
+    padding: .4em 1em;
+    text-decoration: none;
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+}
+.maestroCaja
+{
+    float: left;
+    width: 385px;
+}
+.maestroCaja h2
+{
+    text-align: center;
+}
+.maestroCaja h2 img
+{
+    width: 18px;
+    margin-left: 10px;
+    opacity: 0.5;
+}
+.maestroCaja p
+{
+    margin-left: 10px;
+}
+.cajaArriba, .cajaAbajo
+{
+    overflow: hidden;
+    margin: 10px 0;
+    padding: 0;
+}
+#buscarPregunta
+{
+    width: 100%;
+    margin: 20px 0;
+}
+#BuscarPregunta
+{
+    width: 600px;
+}
+input
+{
+    display: inline-block;
+    margin: 0;
+    width: 152px
+}
+#BuscarPreguntaBoton
+{
+    border: none;
+}
+input
+{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: 0;
+    border-bottom: 2px dotted #0a7ec0;
+    font-size: 14px;
+    font-weight: 100;
+    margin: 5px 0;
+    padding: 10px;
+}
+input:focus
+{
+    outline: none;
+}

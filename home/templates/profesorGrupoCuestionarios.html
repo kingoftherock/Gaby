@@ -1,0 +1,61 @@
+{% extends 'profesor.html' %}
+    {% block estilos %} 
+        <link rel="stylesheet" href="{{STATIC_URL}}css/profesorGrupoAlumnos.css" />
+        <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/roundSwitch(AcademiaAlumnos).css">
+        <script src="http://code.jquery.com/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="{{STATIC_URL}}js/roundSwitch(AcademiaAlumnos).js"></script>
+        <script src="{{STATIC_URL}}js/profesorGrupoCuestionarios.js"></script>
+    {% endblock %}
+    {% block menu %}
+        <li><a href='/Gaby/Profesor/Cuestionarios'>Cuestionarios</a></li>
+        <li><a href="/Gaby/Profesor/Grupos" class="activo">Grupos</a></li>
+        <li><a href="/Gaby/Profesor/Estadisticas">Estadísticas</a></li>
+        <li><a href="/Gaby/Profesor/Material">Material</a></li>
+    {% endblock %}
+    {% block central %}
+    <h2>{{grupo.nombre}}</h2>
+    {% if mensaje %}
+        <p style="color: #215f8b; text-align:center;">¡{{mensaje}}!</p>
+    {% endif %}
+    <div id="navegacion">
+        <a id="activo" href="/Gaby/Profesor/Grupos/Grupo/{{grupo.id}}/Cuestionarios">Cuestionarios</a>
+        <a href="/Gaby/Profesor/Grupos/Grupo/{{grupo.id}}/Alumnos">Alumnos</a>
+    </div>
+    {% for cuestionario in Cuestionarios %}
+    <div class="cuestionario">
+        <div class="izquierda">
+        <h3>{{cuestionario.cuestionario.titulo}}</h3>
+        <p>Cantidad de preguntas: <span>{{cuestionario.cuestionario.pregunta_set.count}}</span></p>
+        <form method='POST' id="primero_form">
+            {% csrf_token %}
+            <input type="hidden" value="{{cuestionario.cuestionario.id}}" id="preguntas_input" name="preguntas_input2">
+            <input type="hidden" value="{{cuestionario.numeroPreguntas}}" id="numero_Preguntas">
+            <p id="Preguntas">Preguntas por aplicar: <span id="Preguntas_aplicar"><input type='text' id='input_cambiar' name='input_cambio_preguntas' value='{{cuestionario.numeroPreguntas}}'>
+            <input type='submit' value='Listo' id='cambiar_algo'></span></p>
+        </form>
+        <!--<p>Preguntas por aplicar: <span>10</span></p>-->
+        </div>
+        <form method="POST" action="" id="activar_cuestionarios">
+            <p>Activar cuestionario</p>
+            {% csrf_token %}
+            <!--<div class="Switch Off" id="nose">
+                <div class="Toggle"></div>
+                <span class="On">OFF</span>
+                <span class="Off">ON</span>
+            </div>
+            <br>
+            <br>-->
+            <input type="hidden" value="{{cuestionario.cuestionario.id}}" name="nombreRelacion">
+            <input id="marcarCasilla" name="estado" type="checkbox"
+            {% if cuestionario.activo %}
+                checked 
+            {% else %}
+            {% endif %}
+            >
+            <input id="botonEnviar" type="submit" value="Modificar">
+        </form>
+    </div>
+    {% empty %}
+        <p>Su academia no ha registrado ningún cuestionario</p>
+    {% endfor %}
+    {% endblock %}

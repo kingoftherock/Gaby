@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<title>Dreedi</title>
+	<script src="http://code.jquery.com/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{STATIC_URL}}css/normalize.css">
+	<link rel="stylesheet" href="{{STATIC_URL}}css/estilos.css">
+    <link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico" type="image/x-icon" />
+    <script src="{{STATIC_URL}}js/suavizado_link.js"></script>
+</head>
+<body>
+    <div id="header">
+        <header>
+            <figure>
+                <a href="/">
+                    Dreedi
+                </a>
+            </figure>
+            <nav>
+                <ul>
+                    <li><a href="#QuienesSomos">¿Quiénes somos?</a></li>
+                    <li><a href="#NuestrosProyectos">Nuestros proyectos</a></li>
+                    <li><a href="#ElEquipo">El equipo</a></li>
+                    <li><a href="#Contactanos">Contáctanos</a></li>
+                </ul>
+            </nav>
+        </header>
+        <h1>Dreedi es la empresa que deseas</h1>
+        <h2>¿Quieres enterarte de nuestros próximos proyectos y promociones? <span><a href="#Contactanos"> Saber más.</a></span></h2>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" placeholder="Nombre" name="nombre" />
+            <input type="email" placeholder="Correo" name="email" />
+            <input type="submit" id="enviar1" value="Enviar" style="color:#fff;"/>
+        </form>
+    </div>
+    <div id="QuienesSomos">
+        <div id="cajaDreedi">
+            <h2>Dreedi</h2>
+            <p id="PrimerElementoCajaDreedi">Enjoy the software!</p>
+            <p id="UltimoElementoCajaDreedi">Dreedi sólo quiere la satisfacción de sus clientes <3.</p>
+        </div>
+        <div id="Columna">
+            <div class="Columna">
+                <h2 id="amigable">Creativo</h2>
+                <p>La imaginación e inventiva son las piedras angulares en las que se basa la programación. En Dreedi entendemos la importancia de comprender el entorno para así juntarlo con nuestras más brillantes ideas con la finalidad de lograr un proyecto de lo más maravilloso. Lo entendemos y siempre trabajamos en la escencial, y a veces olvidada creatividad.  </p>
+            </div>
+            <div class="Columna">
+                <h2 id="fresco">Evolución</h2>
+                <p>El modo de vida agitado que llevamos nos exige la eterna búsqueda de la superación profesional y personal.
+Los conocimientos y habilidades con los que contamos hoy no serán los mismos mañana; los errores se mejorarán, las habilidades se perfeccionarán y los obstáculos se superarán. Si piensas que eres perfecto, nunca llegarás a serlo.</p>
+            </div>
+            <div class="Columna">
+                <h2 id="audaz">Inquebrantable</h2>
+                <p>Como es de suponer, muchas veces los planes no resultarán como los imaginados, tenemos bastante claro que caer no es problema, sino jamás levantarse. Cualquier inconveniente, contratiempo o problema, será enfrentado con la mayor determinación y el más grande espíritu de superación.</p>
+            </div>
+            <div class="Columna">
+                <h2 id="innovador">Profesional</h2>
+                <p>La calidad, seriedad, honradez y eficacia son conceptos que siempre aplicamos en nuestro trabajo, proyectos y metas. Nos define la responsabilidad y la puntualidad nos avala.</p>
+            </div>
+        </div>
+        <h2>Tecnologías</h2>
+        <div id="tecnologias">
+            <ul>
+                <li>
+                    <img src="{{STATIC_URL}}img/django.png" />
+                    <p>Django</p>
+                </li>
+                <li>
+                    <img src="{{STATIC_URL}}img/Python.png" />
+                    <p>Python</p>
+                </li>
+                <li>
+                    <img src="{{STATIC_URL}}img/java.png" />
+                    <p>Java</p>
+                </li>
+                <li>
+                    <img src="{{STATIC_URL}}img/postgresql.png" />
+                    <p>PostgreSQL</p>
+                </li>
+                <li>
+                    <img src="{{STATIC_URL}}img/Mysql.png" />
+                    <p>MySQL</p>
+                </li>
+                <li>
+                    <img src="{{STATIC_URL}}img/jsp.png" />
+                    <p>JSP</p>
+                </li>
+                <li>
+                    <img src="{{STATIC_URL}}img/js.png" />
+                    <p>JavaScript</p>
+                </li>
+                <li>
+                    <img src="{{STATIC_URL}}img/html5.png" />
+                    <p>HTML 5</p>
+                </li>
+                <li>
+                    <img src="{{STATIC_URL}}img/css3.png" />
+                    <p>CSS 3</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="NuestrosProyectos">
+        <h2>Nuestros Proyectos</h2>
+        <div id="contenedorProyectos">
+            <div class="cajaProyecto">
+                <figure>
+                    <a href="Gaby">
+                        <img src="{{STATIC_URL}}img/logoGaby.jpg" />
+                    </a>
+                </figure>
+                <p class="tituloProyecto"><a href="Gaby">Gaby</a></p>
+                <p class="descripcionProyecto">Gaby es la plataforma gratuita e interactica con la que podrás aplicar cuestionarios y gestionar actividades escolares. <span><a href="#">Leer más.</a></span></p>
+            </div>
+            <div class="cajaProyecto">
+                <figure>
+                    <a href="#">
+                        <img src="{{STATIC_URL}}img/logoNo.jpg" />
+                    </a>
+                </figure>
+                <p class="tituloProyecto"><a href="">Futuro proyecto</a></p>
+                <p class="descripcionProyecto">Descripción del futro proyecto. <span><a href="#">Leer más.</a></span></p>
+            </div>
+            <div class="cajaProyecto">
+                <figure>
+                    <a href="#">
+                        <img src="{{STATIC_URL}}img/logoDinero.jpg" />
+                    </a>
+                </figure>
+                <p class="tituloProyecto"><a href="">Proyecto Millonario</a></p>
+                <p class="descripcionProyecto">Descripción  del futuro proyecto millonario. <span><a href="#">Leer más.</a></span></p>
+            </div>
+            <div class="cajaProyecto">
+                <figure>
+                    <a href="#">
+                        <img src="{{STATIC_URL}}img/logoPocoDinero.jpg" />
+                    </a>
+                </figure>
+                <p class="tituloProyecto"><a href="">Proyecto no tan Millonario</a></p>
+                <p class="descripcionProyecto">Descripción  del futuro proyectos no tan millonarios. <span><a href="#">Leer más.</a></span></p>
+            </div>
+        </div>
+    </div>
+    <div id="ElEquipo">
+        <h2>El equipo</h2>
+        <div id="contenedorEquipo">
+            <div class="cajaIntegrante">
+                <figure>
+                    <img src="{{STATIC_URL}}img/Pablo.jpg" />
+                </figure>
+                <h2>Pablo Ángel Trinidad Paz</h2>
+                <ul>
+                    <li>Director General</li>
+                    <li>Departamento de Desarrollo Web</li>
+                    <li>Desarrollador del Backend</li>
+                </ul>
+            </div>
+            <div class="cajaIntegrante">
+                <figure>
+                    <img src="{{STATIC_URL}}img/Cesar.jpg" />
+                </figure>
+                <h2>César Alejandro Lara Limón</h2>
+                <ul>
+                    <li>Departamento de Marketing</li>
+                    <li>Creador de Diseño</li>
+                </ul>
+            </div>
+            <div class="cajaIntegrante">
+                <figure>
+                    <img src="{{STATIC_URL}}img/Bautista.jpg" />
+                </figure>
+                <h2>Bautista Pértica Cabrera</h2>
+                <ul>
+                    <li>Desarrollador de la Base de Datos</li>
+                </ul>
+            </div>
+            <div class="cajaIntegrante">
+                <figure>
+                    <img src="{{STATIC_URL}}img/Rafa.jpg" />
+                </figure>
+                <h2>Rafael Miranda Villegas</h2>
+                <ul>
+                    <li>Desarrollador de la Base de Datos</li>
+                </ul>
+            </div>
+            <div class="cajaIntegrante">
+                <figure>
+                    <img src="{{STATIC_URL}}img/Eder.jpg" />
+                </figure>
+                <h2>Eder Eduardo Vázquez Salcedo</h2>
+                <ul>
+                    <li>Administración</li>
+                    <li>Desarrollador del Frontend</li>
+                </ul>
+            </div>
+        </div>
+        <h2>Certificaciones</h2>
+        <div id="Certificaciones">
+            <div id="CertificacionesLista">
+                <ul>
+                    <li>
+                        <h3>6.00.1x Introduction to Computer Science and Programming</h3>
+                        <h2>20 de Abril de 2014</h2>
+                        <p>Massachusetts Institute of Technology</p>
+                    </li>
+                    <li>
+                        <h3>Curso de Diseño Web Online</h3>
+                        <h2>30 de Enero de 2014</h2>
+                        <p>Mejorando.la</p>
+                    </li>
+                    <li>
+                        <h3>Curso Profesional de Backend Online</h3>
+                        <h2>19 de Enero de 2014</h2>
+                        <p>Mejorando.la</p>
+                    </li>
+                </ul>
+            </div>
+            <div id="imagenes">
+                <figure class="CertificacionLogo" id="primero">
+                    <img src="{{STATIC_URL}}img/MIT.png" />
+                </figure>
+                <figure class="CertificacionLogo" id="segundo">
+                    <img src="{{STATIC_URL}}img/EDX.PNG" />
+                </figure>
+                <figure class="CertificacionLogo" id="tercero">
+                    <img class="mejor" src="{{STATIC_URL}}img/mejorandola.png" />
+                </figure>
+                <figure class="CertificacionLogo" id="cuarto">
+                        <img class="mejor" src="{{STATIC_URL}}img/mejorandola.png" />
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div id="Contactanos">
+        <h1>Cuentanos tu idea en un mensaje</h1>
+        <h2>Consulta con nosotros la planificación y desarrollo de tus proyectos en un <span>clic.</span></h2>
+        <form method="POST" action=".">
+            {% csrf_token %}
+            <input type="text" placeholder="Nombre" name="nombre" required/>
+            <input type="email" placeholder="Correo" name="email" required/>
+            <textarea placeholder="Mensaje" name="texto" required></textarea>
+            <input type="submit" id="enviar2" value="Enviar" style="color:#fff; width:429px;" />
+        </form>
+        <div id="redes">
+            <p id="github"><a href="http://github.com/dreedi"></a></p>
+            <p id="twitter"><a href="http://twitter.com/dreedimx"></a></p>
+            <p id="googlePlus"><a href="#"></a></p>
+            <p id="facebook"><a href="https://www.facebook.com/Dreedi"></a></p>
+            <p id="youtube"><a href="https://www.facebook.com/Dreedi"></a></p>
+        </div>
+    </div>
+</body>
+</html>

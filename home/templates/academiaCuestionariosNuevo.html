@@ -1,0 +1,20 @@
+{% extends 'academia.html' %}
+    {% block estilos %}
+        <link rel="stylesheet" href="{{STATIC_URL}}css/academiaCuestionariosNuevo.css" />
+    {% endblock %}
+    {% block menu %}
+        <li><a href='/Gaby/Academia/Cuestionarios' class="activo" >Cuestionarios</a></li>
+        <li><a href="/Gaby/Academia/Maestros">Maestros</a></li>
+        <li><a href="/Gaby/Academia/Estadisticas">Estadísticas</a></li>
+        <li><a href="/Gaby/Academia/Alumnos">Alumnos</a></li>
+        <li><a href="/Gaby/Academia/Material">Material</a></li>
+    {% endblock %}
+    {% block central %}
+        <h2>Cuestionario Nuevo</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="academia" value="{{usuario.id}}" />
+            <input type="textarea" name="titulo" placeholder="Título del cuestionario" required />
+            <input type="submit" id="submit" value="Entrar">
+        </form>
+    {% endblock %}

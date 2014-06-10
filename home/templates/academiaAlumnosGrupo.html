@@ -1,0 +1,41 @@
+{% extends 'academia.html' %}
+    {% block estilos %} 
+        <link rel="stylesheet" href="{{STATIC_URL}}css/academiaAlumnos.css" />
+    {% endblock %}
+    {% block menu %}
+        <li><a href='/Gaby/Academia/Cuestionarios'>Cuestionarios</a></li>
+        <li><a href="/Gaby/Academia/Maestros">Maestros</a></li>
+        <li><a href="/Gaby/Academia/Estadisticas">Estadísticas</a></li>
+        <li><a href="/Gaby/Academia/Alumnos" class="activo">Alumnos</a></li>
+        <li><a href="/Gaby/Academia/Material">Material</a></li>
+    {% endblock %}
+    {% block central %}
+        <h2>Grupo: {{Grupo.nombre}}</h2>
+        <table>
+		<thead>
+			<tr>
+				<th>Apellido</th>
+				<th>Nombre</th>
+				<th>Usuario</th>
+				<th>Promedio</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for alumno in Alumnos %}
+			<tr>
+                <td>{{alumno.alumno.alumno.last_name}}</td>
+				<td>{{alumno.alumno.alumno.first_name}}</td>
+				<td>{{alumno.alumno.alumno.username}}</td>
+				<td>{{alumno.promedio}}</td>
+			</tr>
+			{% empty %}
+				<tr>
+					<td></td>
+					<td>No se han registrado alumnos aún</td>
+                	<td>-</td>
+					<td>-</td>
+				</tr>
+			{% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}

@@ -1,0 +1,252 @@
+span
+{
+    font-weight: normal;
+}
+.pregunta
+{
+    border: 1px dashed #fff;
+    background: #fff;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 0;
+    width: 750px;
+    
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+.pregunta h4
+{
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.pregunta .respuestasArriba, .pregunta .respuestasAbajo
+{
+    margin: 10px 50px;
+    padding: 0;
+    overflow: hidden;
+}
+.pregunta .respuestasArriba p, .pregunta .respuestasAbajo p
+{
+    float: left;
+    margin: 5px 8px;
+    padding: 0;
+    width: 300px;
+}
+.pregunta .respuestasArriba .correcta
+{
+    color: #fff;
+    background: #7dc36b;
+    display: block;
+    font-weight: 200;
+    line-height: 150%;
+    opacity: 0.9;
+    padding: 10px 3px;
+    text-align: center;
+    text-decoration: none;
+}
+.pregunta .respuestasArriba .incorrecta, .pregunta .respuestasAbajo .incorrecta
+{
+    color: #fff;
+    background: #989898;
+    display: block;
+    font-weight: 200;
+    line-height: 150%;
+    opacity: 0.9;
+    padding: 10px 3px;
+    text-align: center;
+    text-decoration: none;
+}
+#NuevaPregunta
+{
+    background: #f5f5f5;
+    margin: 20px 50px;
+    padding: 10px;
+    overflow: hidden;
+
+    /*display: none;*/
+    
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+#NuevaPregunta h3
+{
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+}
+input
+{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: 0;
+    border-bottom: 2px dotted #0a7ec0;
+    font-size: 14px;
+    font-weight: 100;
+    margin: 5px 0;
+    padding: 10px;
+    width: 97%;
+}
+input:focus
+{
+    outline: none;
+}
+#submit
+{
+    border: none;
+    background: #3495ce;
+    color: white;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    font-size: 14px;
+    width: 200px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    padding: 20px 0;
+    margin: 0 auto;
+    
+    border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+}
+#respuestaCorrectaNueva
+{
+    border-bottom: 2px dotted #7dc36b;
+}
+.respuestaIncorrectNueva
+{
+    border-bottom: 2px dotted #eaa33a;
+}
+h3:first-child button
+{
+    margin-left: 10px;
+    background: none;
+    border: none;
+}
+h3:first-child button img
+{
+    width: 18px;
+    opacity: 0.5;
+}
+h3:first-child button img:hover
+{
+    opacity: 1;
+    
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+#buscarPregunta
+{
+    width: 100%;
+}
+#BuscarPregunta
+{
+    width: 600px;
+}
+#BuscarPreguntaBoton
+{
+    border: none;
+    width: 100px;
+}
+
+/* cambios */
+
+#Cambio_titulo
+{
+    display: none;
+}
+
+#Borrar_cuestionario
+{
+    margin-left: 5px;
+    background-color: white;
+    border: none;
+}
+
+#Borrar_cuestionario img
+{
+    width: 18px;
+    opacity: 0.5;
+}
+#Borrar_cuestioario button img:hover
+{
+    opacity: 1;
+    
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+#input_cambio_titulo
+{
+    width: 50%;
+}
+
+#cambiar_titulo
+{
+    border: none;
+    width: 10%;
+}
+
+#cambiar_titulo:focus
+{
+    outline: none;
+}
+
+.boton_borrar
+{
+    border: none;
+    background: #3495ce;
+    color: white;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    font-size: 14px;
+    width: 120px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px 0;
+    margin: 0 auto;
+    
+    border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+}
+
+#primero_div, h3, form
+{
+    display: inline-block;
+}
+
+button:focus
+{
+    outline: none;
+}
+
+aside h2
+{
+    text-align: center;
+}
+
+#Aceptar_borrar
+{
+    background-color: #D64B50;
+}

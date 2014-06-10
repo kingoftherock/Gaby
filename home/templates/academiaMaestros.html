@@ -1,0 +1,61 @@
+{% extends 'academia.html' %}
+    {% block estilos %} 
+        <link rel="stylesheet" href="{{STATIC_URL}}css/academiaMaestros.css" />
+    {% endblock %}
+    {% block menu %}
+        <li><a href='/Gaby/Academia/Cuestionarios'>Cuestionarios</a></li>
+        <li><a href="/Gaby/Academia/Maestros" class="activo">Maestros</a></li>
+        <li><a href="/Gaby/Academia/Estadisticas">Estadísticas</a></li>
+        <li><a href="/Gaby/Academia/Alumnos">Alumnos</a></li>
+        <li><a href="/Gaby/Academia/Material">Material</a></li>
+    {% endblock %}
+    {% block central %}
+        <h2>Maestros</h2>
+        <div id="navegacion">
+            <a href="/Gaby/Academia/Maestros/Registrar">Registrar profesores</a>
+            <a id="activo" href="/Gaby/Academia/Maestros">Todos los profesores</a>
+        </div>
+        <div id="buscarPregunta">
+            <form method="GET">
+                <input type="text" name="nombre" id="BuscarPregunta" placeholder="Buscar Profesor">
+                <input type="submit" id="BuscarPreguntaBoton" name="enviar" value="Buscar">
+            </form>  
+        </div>
+        {% for elemento in resultado %}
+            <div class="maestroCaja">
+                    <h2>{{elemento.profesor.profesor.profesor.first_name}} {{elemento.profesor.profesor.profesor.last_name}}</h2>
+                    <p class="fechaCreacion">Usuario: <span>{{elemento.profesor.profesor.profesor.username}}</span></p>
+                    <p>Correo: <span>{{elemento.profesor.profesor.profesor.email}}</span></p>
+                    <div class="grupos">
+                        <p>Grupos:</p>
+                        <ul>
+                            {% for grupo in elemento.grupos %}
+                            <li><a href="#">{{grupo}}</a></li>
+                            {% empty %}
+                            <li>Éste profesor no ha registrado grupos</li>
+                            {% endfor %}
+                        </ul>    
+                    </div>
+                </div>
+            {% empty %}
+            {% for elemento in grupoAcademia %}
+                <div class="maestroCaja">
+                    <h2>{{elemento.profesor.profesor.profesor.first_name}} {{elemento.profesor.profesor.profesor.last_name}}</h2>
+                    <p class="fechaCreacion">Usuario: <span>{{elemento.profesor.profesor.profesor.username}}</span></p>
+                    <p>Correo: <span>{{elemento.profesor.profesor.profesor.email}}</span></p>
+                    <div class="grupos">
+                        <p>Grupos:</p>
+                        <ul>
+                            {% for grupo in elemento.grupos %}
+                            <li><a href="/Gaby/Academia/Alumnos/Grupo/{{grupo.id}}/">{{grupo}}</a></li>
+                            {% empty %}
+                            <li>Éste profesor no ha registrado grupos</li>
+                            {% endfor %}
+                        </ul>    
+                    </div>
+                </div>
+            {% empty %}
+                <h2>No hay profesores registrados</h2>
+            {% endfor %}
+        {% endfor %}
+    {% endblock %}

@@ -1,0 +1,418 @@
+body
+{
+	color: #f9f5f2;
+	font-family: 'Lato', sans-serif;
+	font-size: 13px;
+	margin: 0;
+	padding: 0;
+}
+h1
+{
+    color: #336699;
+    font-family: 'Lobster';
+    font-size: 7em;
+    margin: 0 auto;
+    margin-top: .5em;
+    padding-bottom: .1em;
+    text-align: center;
+    width: 100%;
+}
+nav:before
+{
+	content: "";
+	display: block;
+	height: 1px;
+	background: -webkit-gradient(linear, 100% 0, 0 0, from(hsla(0, 0%, 0%, 0)), color-stop(0.5, hsla(0, 0%, 0%, 0.1)));
+	background: -webkit-linear-gradient(to right, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.1) 50%);
+	background: -moz-linear-gradient(to right, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.1) 50%);
+	background: -o-linear-gradient(to right, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.1) 50%);
+	background: linear-gradient(to right, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.1) 50%);
+}
+nav ul
+{
+	display: block;
+	margin: 3em 0 0 0;
+}
+nav ul li
+{
+	list-style: none;
+	text-align: right;
+}
+nav ul li a
+{
+	color: #434343;
+	font-size: 16px;
+	font-weight: lighter;
+	line-height: 150%;
+	text-decoration: none;
+	transition: 0.8s;
+	-webkit-transition: 0.8s;
+	-moz-transition: 0.8s;
+	-o-transition: 0.8s;
+}
+nav ul li a:hover
+{
+	color: hsl(220,60%,60%);
+	text-shadow: 2px 1px 10px gray ;
+}
+nav ul li a#primerElementoLista
+{
+	display: block;
+	margin-top: 3em;
+}
+section
+{
+	display: block;
+	float: left;
+	margin-left: 240px;
+	margin-top: 10em;
+	min-width: 500px;
+	width: 70%;
+}
+h2
+{
+	color: #222;
+	font-size: 2.5em;
+	margin: 0;
+	padding: 0;
+}
+#about p, #slider p, #calculadora p, #tablas p
+{
+	color: hsl(0, 0%, 36%);
+    font-size: 16px;
+    line-height: 220%;
+    font-weight: 100;
+	text-align: justify;
+}
+#identificadorPropio
+{
+	color: #535353;
+	line-height: 160%;
+	font-size: 13px;
+	font-weight: lighter;
+	text-align: justify;
+}
+#identificadorPropio a
+{
+    border-bottom: 1px dashed gray;
+    color: #363636;
+    font-family: 'Lobster';
+    text-decoration: none;
+}
+#imagen_avatar
+{
+	display: block;
+	margin: 1em 0 0.5em 9em;
+	width: 100%;
+}
+#imagen_avatar img
+{
+	border-radius: 50%;
+	width: 60px;
+}
+#contenedor
+{	
+	height: 100%;
+	margin: 0 auto;
+	margin-top: 2em;
+	max-width: 1000px;
+	overflow: hidden;
+	width: 70%;
+}
+#columna_izquierda
+{
+	display: block;
+	float: left;
+	position: fixed;
+	width: 200px;
+}
+#formulario button
+{
+	background: hsl(220,60%,60%);
+	border-radius: 3px;
+	border: none;
+	box-shadow: inset 0 -4px 0 rgba(0,0,0,0.15);
+	color: white;
+	display: block;
+	float: left;
+	padding: .8em 1.8em;
+	margin: .5em 1em 0 1em;
+	text-decoration: none;
+	transition: 0.3s;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-o-transition: 0.3s;
+}
+#formulario:after, #formulario:before
+{
+	content: "";
+	display: block;
+	height: 1px;
+	background: -webkit-gradient(linear, 100% 0, 0 0, from(hsla(0, 0%, 0%, 0)), color-stop(0.5, hsla(0, 0%, 0%, 0.1)));
+	background: -webkit-linear-gradient(to right, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.1) 50%);
+	background: -moz-linear-gradient(to right, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.1) 50%);
+	background: -o-linear-gradient(to right, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.1) 50%);
+	background: linear-gradient(to right, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.1) 50%);
+}
+#formulario button:hover
+{
+	box-shadow: inset 0 -8px 0 rgba(0,0,0,0.15);
+	padding: 1em 2em;
+}
+#formulario input
+{
+	border: 2px solid hsl(220,60%,60%);
+	border-radius: .3em;
+	margin-bottom: .5em;
+}
+#formulario input:focus
+{
+	border-color: orange;
+	padding: .2em 0;
+}
+#formulario_check
+{
+	color: hsl(0, 0%, 36%);
+}
+#header_tabla
+{
+	background: orange;
+	border: 1px solid gray;
+	color: gray;
+}
+#post ul
+{
+	color: black;
+	margin: 0 auto;
+}
+#post ul li
+{
+	font-size: 17px;
+	font-weight: bolder;
+}
+#post ul li ol li
+{
+	color: gray;
+	font-size: 14px;
+	font-weight: lighter;
+}
+#seccion_links
+{
+	margin: 2em 3em;
+}
+#seccion_links h3
+{
+	color: rgb(174, 174, 174);
+}
+#seccion_links p
+{
+	display: inline-block;
+}
+#seccion_links p a
+{
+	background: hsl(0, 0%, 36%);
+	color: white;
+	padding: .8em 1.8em;
+	text-decoration: none;
+	transition: 0.3s;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-o-transition: 0.3s;
+}
+#seccion_links p a:hover
+{
+	padding: .9em 1.9em;
+}
+#tabla
+{
+	border: transparent;
+	margin: auto;
+	margin-bottom: 5em;
+	margin-top: 5em;
+	text-align: center;
+}
+.imagen_tipo1
+{
+	display: block;
+	float: left;
+	padding: 0.7em;
+	transition: 1.3s;
+	-webkit-transition: 1.3s;
+	-moz-transition: 1.3s;
+	-o-transition: 1.3s;
+	width: 50px;
+}
+.imagen_tipo1:hover,.imagen_tipo2:hover
+{
+	width: 100px;
+}
+.imagen_tipo2
+{
+	display: block;
+	float: right;
+	padding: 0.7em;
+	transition: 1.3s;
+	-webkit-transition: 1.3s;
+	-moz-transition: 1.3s;
+	-o-transition: 1.3s;
+	width: 50px;
+}
+.imagen_tipo3
+{
+	border: 3px solid gray;
+	border-radius: 10px;
+	display: block;
+	margin: 0 auto;
+	transition: 1.3s;
+	-webkit-transition: 1.3s;
+	-moz-transition: 1.3s;
+	-o-transition: 1.3s;
+	width: 300px;
+}
+.imagen_tipo3:hover
+{
+	width: 400px;
+}
+.impar
+{
+	background: rgba(99, 137, 211,1);
+}
+.par
+{
+	background: rgba(174,174,174,.4);
+	color: hsl(0, 0%, 20%);
+}
+.tecnologia
+{
+    background: #0099CC;
+    height: 210px;
+    margin: 0;
+    padding: 0;
+    margin: 0 auto;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    overflow: hidden;
+    position: relative;
+    width: 650px;
+}
+.tecnologia figure
+{
+    background: rgba(51, 147, 215, 0.53);
+    float: left;
+    height: 210px;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+}
+.tecnologia figure img
+{
+    margin: 0;
+    vertical-align: middle;
+    width: 200px;
+}
+.tecnologia .contenedorTecnologia
+{
+    background: #215f8b;
+    float: left;
+    height: 210px;
+    margin: 0;
+    padding: 0;
+    width: 450px;
+}
+.tecnologia .contenedorTecnologia h3
+{
+    color: #fff;
+    font-size: 3em;
+    font-weight: 100;
+    margin: 3px 10px;
+    padding: 0;
+}
+.tecnologia .contenedorTecnologia .version, .tecnologia .contenedorTecnologia .razon
+{
+    color: #fff;
+    font-size: 1em;
+    font-weight: 100;
+    margin: 3px 15px;
+    padding: 0;
+}
+.tecnologia .contenedorTecnologia .razon
+{
+    margin-top: 13px;
+    text-align: justify;
+}
+input:focus
+{
+    outline: none;
+}
+.tecnologia .contenedorTecnologia .linkTecnologia a
+{
+    color: #fff;
+    background: hsl(0, 0%, 36%);
+    bottom: 0;
+    padding: .6em 1em;
+    position: absolute;
+    text-decoration: none;
+    right: 0;
+    
+    border-radius: 7px 0px 0px 0px;
+    -moz-border-radius: 7px 0px 0px 0px;
+    -webkit-border-radius: 7px 0px 0px 0px;
+    border: 0px solid #000000;
+    
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s;
+}
+.tecnologia .contenedorTecnologia .linkTecnologia a:hover
+{
+    padding: .8em 1em;
+}
+.django
+{
+    padding-top: 38px;
+}
+#postgres
+{
+    padding-left: 15px;
+    padding-top: 15px;
+    width: 170px;
+}
+#acceso
+{
+    position: fixed;
+    padding: .5em .8em;
+    margin: 0;
+    top: 0;
+    right: 0;
+    width: 210px;
+}
+#acceso h1
+{
+    font-size: 1.5em;
+    padding: 0;
+    margin: 0;
+}
+#acceso p
+{
+    display: inline-block;
+    margin: .4em 0;
+    text-align: right;
+}
+#acceso p a
+{
+    background: hsl(0, 0%, 36%);
+    color: #fff;
+    margin: 0;
+    padding: .3em 1em;
+    text-decoration: none;
+}
+#acceso p #alumnos
+{
+    background: #0099CC;
+    color: #fff;
+    margin: 0;
+    padding: .3em 1em;
+    text-decoration: none;
+}

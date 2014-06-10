@@ -1,0 +1,85 @@
+{% extends 'academia.html' %}
+    {% block estilos %} 
+        <link rel="stylesheet" href="{{STATIC_URL}}css/academiaCuestionario.css" />
+        <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/borrar_academia.css">
+    {% endblock %}
+    {% block menu %}
+        <li><a href='/Gaby/Academia/Cuestionarios' class="activo" >Cuestionarios</a></li>
+        <li><a href="/Gaby/Academia/Maestros">Maestros</a></li>
+        <li><a href="/Gaby/Academia/Estadisticas">Estadísticas</a></li>
+        <li><a href="/Gaby/Academia/Alumnos">Alumnos</a></li>
+        <li><a href="/Gaby/Academia/Material">Material</a></li>
+    {% endblock %}
+    {% block central %}
+        <input style="hidden" value="{{cuestionario.titulo}}" id="Cambio_titulo">
+
+        <aside id="default-popup" class="avgrund-popup">
+            <h2>¿Está seguro de borrar este cuestionario?</h2>
+            <form action="../../Borrar" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="cuestionario" value="{{cuestionario.id}}">
+                <button id="Aceptar_borrar" class="boton_borrar">Borrar</button>
+            </form>        
+            <button onclick="javascript:closeDialog();" class="boton_borrar">Cancelar</button>
+        </aside>
+        <div class="avgrund-contents">
+            <form method='POST' id="primero_form">
+                {% csrf_token %}
+                <div id="primero_div">
+                    <h3 id="primero">{{cuestionario.titulo}}<button id="cambiar_cuestionario_titulo" onclick="cambiar_titulo()"><img src="{{STATIC_URL}}img/lapiz.png"></button></h3>
+                </div>
+            </form>
+            <button id="Borrar_cuestionario" onclick="openDialog();"><img src="{{STATIC_URL}}img/Basura.jpg"></button>
+            <script src="{{STATIC_URL}}js/academiaCuestionario.js">          
+            </script>
+        <p id="fechaCreacion">Creado el: <span>{{cuestionario.fecha_Creacion}}</span></p>
+        <p id="numeroPreguntas">Tamaño: <span>{{tamanio}} Preguntas</span></p>
+        <div id="buscarPregunta">
+            <form method="GET">
+                <input type="text" name="nombre" id="BuscarPregunta" placeholder="Buscar Pregunta">
+                <input type="submit" id="BuscarPreguntaBoton" name="enviar" value="Buscar">
+            </form>    
+        </div>
+        {% for i in resultado %}
+            <div class="pregunta">
+                <h4>{{i.pregunta}}</h4>
+                <div class="respuestasArriba">
+                    <p class="correcta">{{i.respuestaCorrecta}}</p>
+                    <p class="incorrecta">{{i.respuestaIncorrecta1}}</p>
+                </div>
+                <div class="respuestasAbajo">
+                    <p class="incorrecta">{{i.respuestaIncorrecta2}}</p>
+                    <p class="incorrecta">{{i.respuestaIncorrecta3}}</p>
+                </div>
+            </div>
+        {% endfor %}
+        <div id="NuevaPregunta">
+            <h3>Nueva Pregunta</h3>
+            <form method="post" action="">
+                {% csrf_token %}
+                <input name="cuestionario" type="hidden" value="{{cuestionario.id}}" />
+                <input name="pregunta" type="text" placeholder="Pregunta" required />
+                <input name="respuestaCorrecta" id="respuestaCorrectaNueva" type="text" placeholder="Respuesta correcta" required />
+                <input name="respuestaIncorrecta1" class="respuestaIncorrectNueva" type="text" placeholder="1.- Respuesta incorrecta" required />
+                <input name="respuestaIncorrecta2" class="respuestaIncorrectNueva" type="text" placeholder="2.- Respuesta incorrecta" required />
+                <input name="respuestaIncorrecta3" class="respuestaIncorrectNueva" type="text" placeholder="3.- Respuesta incorrecta" required />
+                <input id="submit" type="submit" value="Agregar">
+            </form>
+        </div>
+        {% for pregunta in preguntas %}
+            <div class="pregunta">
+                <h4>{{pregunta.pregunta}}</h4>
+                <div class="respuestasArriba">
+                    <p class="correcta">{{pregunta.respuestaCorrecta}}</p>
+                    <p class="incorrecta">{{pregunta.respuestaIncorrecta1}}</p>
+                </div>
+                <div class="respuestasAbajo">
+                    <p class="incorrecta">{{pregunta.respuestaIncorrecta2}}</p>
+                    <p class="incorrecta">{{pregunta.respuestaIncorrecta3}}</p>
+                </div>
+            </div>
+        {% empty %}
+        <p style="text-align:center;">No hay ninguna pregunta registrada aún</p>
+        {% endfor %}
+        </div>
+    {% endblock %}

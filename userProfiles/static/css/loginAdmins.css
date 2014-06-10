@@ -1,0 +1,141 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../icon-fonts/index/icomoon.eot?-syxpsc');
+	src:url('../icon-fonts/index/icomoon.eot?#iefix-syxpsc') format('embedded-opentype'),
+		url('../icon-fonts/index/icomoon.woff?-syxpsc') format('woff'),
+		url('../icon-fonts/index/icomoon.ttf?-syxpsc') format('truetype'),
+		url('../icon-fonts/index/icomoon.svg?-syxpsc#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+body
+{
+    background: #fff;
+    color: #272727;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+}
+button
+{
+    border: none;
+    background: #215f8b;
+    color: white;
+    display: block;
+    text-transform: uppercase;
+    margin: 0 auto;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    font-size: 14px;
+    width: 323px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    padding: 20px 0;  
+}
+#botonEntrar
+{
+    border: none;
+    background: #215f8b;
+    color: white;
+    display: block;
+    text-transform: uppercase;
+    margin: 0 auto;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    font-size: 14px;
+    width: 323px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    padding: 20px 0;  
+}
+input
+{
+    border: 1px #c1c1c1 solid;
+    height: 50px;
+    font-size: 18px;
+    
+    display: block;
+    margin: 0 auto 18px auto;
+    font-weight: 100;
+    width: 323px;
+    text-align: center;
+    border-radius: 3px;
+    color: #2d2d2d;
+    outline: none;
+    font-family: inherit;
+    letter-spacing: normal;
+    word-spacing: normal;
+}
+input:focus
+{
+    outline: none;
+}
+#contenedor
+{
+    margin: 0 auto;
+    margin-top: 6%;
+    width: 325px;
+}
+#contenedor h1
+{
+    color: #336699;
+    font-family: 'Lobster';
+    font-size: 7em;
+    margin: 0 auto;
+    padding-bottom: .1em;
+    text-align: center;
+    width: 100%;
+}
+#saludo
+{
+    font-size: 1.5em;
+    font-weight: 100;
+    padding-bottom: 1em;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+#contenedor .lastNotLast
+{
+    font-size: 1.2em;
+    font-weight: 100;
+    margin: 0 auto;
+    margin-top: 2em;
+    padding: 0;
+    margin-top: 6px;
+    text-align: center;
+}
+#contenedor .lastUltimo
+{
+    margin-top: 1px dashed gray;
+}
+
+#contenedor .lastNotLast span
+{
+    border-bottom: 1px dotted gray;
+    display: inline-block;
+}
+#contenedor .lastNotLast span button
+{
+    color: #000;
+    display: inline-block;
+    border: none;
+    background: none;
+    text-transform: lowercase;
+    letter-spacing: normal;
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+    font-size: 1em;
+    width: 80px;
+}
+
+
+/*Para ALUMNOS*/
+#loginAlumnosF
+{
+    border: 1px solid red:
+}

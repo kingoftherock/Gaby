@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"type="text/javascript" charset="utf-8"></script>
+	<meta charset="UTF-8">
+	<title>Gaby</title>
+	<link rel="stylesheet" href="{{STATIC_URL}}css/normalize.css">
+	<link rel="stylesheet" href="{{STATIC_URL}}css/gaby.css">
+	<script src="{{STATIC_URL}}js/suavizado_link.js"></script>
+    <link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico" type="image/x-icon" />
+</head>
+<body onload="colorearTabla()">
+    <div id="acceso">
+        <h1>Plataforma</h1>
+        <p><a id="admins" href="AccesoAdmins">Administradores</a></p>
+        <p><a id="alumnos" href="AccesoAlumnos">Alumnos</a></p>
+    </div>
+	<div id="contenedor">
+		<div id="columna_izquierda">
+			<h1>Gaby</h1>
+			<p id="identificadorPropio">Un proyecto de <a href="/">Dreedi </a>®</p>
+			<nav>
+				<ul>
+					<li><a href="#about">Acerca de Gaby</a></li>
+					<li><a href="#post">Tenologías</a></li>
+					<li><a href="#slider" id="primerElementoLista">Primeros pasos</a></li>
+				</ul>
+			</nav>
+		</div>
+		<section>
+			<article id="about">
+				<h2>¿Gaby?</h2>
+				<p>Es una plataforma cuya principal meta es simplificar y mejorar algunos de los procesos esenciales que existen alrededor de la educación. Tanto profesores como alumnos resultan beneficiados ya que Gaby combina las ventajas de los servicios online con la potencia y seguridad de algunas de las tecnologías más recientes y aceptadas por los expertos en la materia, logrando así reducir tiempos, potenciar el aprendizaje y fomentar la retroalimentación entre educadores y educandos.</p>
+				<p>La plataforma facilita la tarea de la aplicación y puntuación de exámenes y cuestionarios; ahorrando así, valiosas horas a los profesores y también siendo amigable con el medio ambiente que se verá favorecido con la disminución del uso de papel antes gastado por los viejos métodos.</p>
+				<p>La barrera en la comunicación disminuye con Gaby, al promover un ambiente de participación e instrucción colectiva que evoluciona en el lugar donde las dudas se disipan y nuevo conocimiento se desvela, el foro.</p>
+				<p>Gaby es una herramienta creada por y para académicos en merced de la educación.</p>
+				<div id="seccion_links">    
+					<p><a href="http://www.ipn.mx/" target="_blank">IPN</a></p>
+					<p><a href="http://www.cecyt9.ipn.mx/" target="_blank">CECyT 9</a></p>
+					<p><a href="/">Dreedi</a></p>
+				</div>
+			</article>
+			<article id="post">
+				<h2>Tecnologías</h2>
+				<div class="tecnologia">
+                    <figure>
+                        <img class="django" src="{{STATIC_URL}}img/django.png">
+                    </figure>
+                    <div class="contenedorTecnologia">
+                        <h3>Django</h3>
+                        <p class="version">Version: 1.6.2</p>
+                        <p class="razon">Django es un framework web de código abierto escrito en Python que permite construir aplicaciones web más rápido y con menos código.Django fue inicialmente desarrollado para gestionar aplicaciones web de páginas orientadas a noticias de World Online, más tarde se liberó bajo licencia BSD. Django se centra en automatizar todo lo posible y se adhiere al principio DRY (Don't Repeat Yourself).</p>
+                        <p class="linkTecnologia"><a href="https://www.djangoproject.com/">Django Project</a></p>
+                    </div>
+                </div>
+                <div class="tecnologia">
+                    <figure>
+                        <img id="postgres" src="{{STATIC_URL}}img/postgresql.png">
+                    </figure>
+                    <div class="contenedorTecnologia">
+                        <h3>PostgreSQL</h3>
+                        <p class="version">Version: 9.1.13</p>
+                        <p class="razon">PostgreSQL es un potente sistema de gestión de bases de datos objeto-relacional, distribuido bajo licencia BSD y de código libre. Tiene más de 15 años de desarrollo activo y una arquitectura probada que se ha ganado una fuerte reputación por su confiabilidad, integridad de datos y exactitud. PostgreSQL en conjunto con Django crea un ambiente más robusto.</p>
+                        <p class="linkTecnologia"><a href="http://www.postgresql.org/">PostgreSQL</a></p>
+                    </div>
+                </div>
+			</article>
+			<article id="slider">
+				<h2>Primeros pasos</h2>
+				<p>Crea una cuenta de administrador en la plataforma, abre tu academia, nombrala como quieras. Para que tus alumnos puedan estár al tanto de tus cuestionarios, abre un periodo de inscripciones, infórmales y dales la contraseña de entrada, así de sencillo conformarás tu grupo de estudios. Cuando quieras evaluar algún tema, crea un cuestionario y actívalo, el sistema se encaragrá de informar, calificar y registrar resultados. Puedes revisar el desempeño de tus educandos en cualquier momento.</p>
+			</article>
+		</section>
+	</div>
+</body>
+</html>

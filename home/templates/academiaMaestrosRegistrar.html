@@ -1,0 +1,37 @@
+{% extends 'academia.html' %}
+    {% block estilos %} 
+        <link rel="stylesheet" href="{{STATIC_URL}}css/academiaMaestrosRegistrar.css" />
+    {% endblock %}
+    {% block menu %}
+        <li><a href='/Gaby/Academia/Cuestionarios'>Cuestionarios</a></li>
+        <li><a href="/Gaby/Academia/Maestros" class="activo">Maestros</a></li>
+        <li><a href="/Gaby/Academia/Estadisticas">Estadísticas</a></li>
+        <li><a href="/Gaby/Academia/Alumnos">Alumnos</a></li>
+        <li><a href="/Gaby/Academia/Material">Material</a></li>
+    {% endblock %}
+    {% block central %}
+        {% if mensaje %}
+            <h2 style="color: #215f8b;">¡{{mensaje}}!</h2>
+        {% else %}
+            <h2>Nuevo Maestro</h2>
+        {% endif %}
+        <h3>La contraseña de sus profesores nuevos siempre será 
+        {% if mensaje %}
+        <span style="font-size: 16px;">dreediGaby</span>
+        {% else %}
+        <span>dreediGaby</span>
+        {% endif %}
+        </h3>
+        <div id="navegacion">
+            <a id="activo" href="/Gaby/Academia/Maestros/Registrar">Registrar profesores</a>
+            <a href="/Gaby/Academia/Maestros">Todos los profesores</a>
+        </div>
+        <form method="POST" action="/registrarProfe">
+            {% csrf_token %}
+            <input name="username" type="text" placeholder="Nombre de Usuario" required />
+            <input name="first_name" type="text" placeholder="Nombre(s)" required />
+            <input name="last_name" type="text" placeholder="Apellidos" required />
+            <input name="email" type="email" placeholder="Correo" required />
+            <input id="submit" type="submit" onclick="javascript:closeDialog();" value="Registrar">
+        </form>
+    {% endblock %}

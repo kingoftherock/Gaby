@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Gaby-Profesor</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{STATIC_URL}}css/normalize.css" />
+    <link rel="stylesheet" href="{{STATIC_URL}}css/academia.css" />
+    <link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico" type="image/x-icon" />
+    {% block estilos %}{% endblock %}
+</head>
+<body>
+    <div id="contenedor">
+        <div id="lateral">
+            <h1>Gaby</h1>
+            <nav>
+                <ul>
+                    {% block menu %}{% endblock %}
+                </ul>
+            </nav>
+            <div id="salida">
+                <a href="#"><img src="{{STATIC_URL}}img/settings.png" /></a>
+                <a href="/salir"><img src="{{STATIC_URL}}img/logout.png" /></a>
+            </div>
+        </div>
+        <div id="central">
+            {% block central %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% extends 'profesor.html' %}
+    {% block estilos %} 
+        <link rel="stylesheet" href="{{STATIC_URL}}css/academiaCuestionario.css" />
+    {% endblock %}
+    {% block menu %}
+        <li><a href='/Gaby/Profesor/Cuestionarios' class="activo" >Cuestionarios</a></li>
+        <li><a href="/Gaby/Profesor/Grupos">Grupos</a></li>
+        <li><a href="/Gaby/Profesor/Estadisticas">Estadísticas</a></li>
+        <li><a href="/Gaby/Profesor/Material">Material</a></li>
+    {% endblock %}
+    {% block central %}
+        <h3 id="primero">{{cuestionario.titulo}}</h3>
+        <p id="fechaCreacion">Creado el: <span>{{cuestionario.fecha_Creacion}}</span></p>
+        <p id="numeroPreguntas">Tamaño: <span>{{tamanio}} Preguntas</span></p>
+        <div id="buscarPregunta">
+            <form method="get">
+                <input type="text" name="BuscarPregunta" id="BuscarPregunta" placeholder="Buscar Pregunta">
+                <input type="submit" id="BuscarPreguntaBoton" value="Buscar">
+            </form>    
+        </div>
+        {% for pregunta in preguntas %}
+            <div class="pregunta">
+                <h4>{{pregunta.pregunta}}</h4>
+                <div class="respuestasArriba">
+                    <p class="correcta">{{pregunta.respuestaCorrecta}}</p>
+                    <p class="incorrecta">{{pregunta.respuestaIncorrecta1}}</p>
+                </div>
+                <div class="respuestasAbajo">
+                    <p class="incorrecta">{{pregunta.respuestaIncorrecta2}}</p>
+                    <p class="incorrecta">{{pregunta.respuestaIncorrecta3}}</p>
+                </div>
+            </div>
+        {% empty %}
+        <p style="text-align:center;">No hay ninguna pregunta registrada aún</p>
+        {% endfor %}
+    {% endblock %}

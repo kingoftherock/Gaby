@@ -1,0 +1,38 @@
+{% extends 'profesor.html' %}
+    {% block estilos %} 
+        <link rel="stylesheet" href="{{STATIC_URL}}css/profesorCuestionarios.css" />
+    {% endblock %}
+    {% block menu %}
+        <li><a href='/Gaby/Profesor/Cuestionarios' class="activo" >Cuestionarios</a></li>
+        <li><a href="/Gaby/Profesor/Grupos">Grupos</a></li>
+        <li><a href="/Gaby/Profesor/Estadisticas">Estadísticas</a></li>
+        <li><a href="/Gaby/Profesor/Material">Material</a></li>
+    {% endblock %}
+    {% block central %}
+        <h2>Cuestionarios</h2>
+
+    <table>
+		<thead>
+			<tr>
+				<th>Nombre del cuestionario</th>
+				<th>No. Preguntas</th>
+				<th>Estado</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for cuestionario in cuestionarios %}
+			<tr>
+				<td><a href="/Gaby/Profesor/Cuestionarios/Cuestionario/{{cuestionario.id}}">{{cuestionario.cuestionario.titulo}}</a></td>
+                <td>{{cuestionario.cuestionario.pregunta_set.count}}</td>
+				<td>{{cuestionario.activo}}</td>
+			</tr>
+			{% empty %}
+				<tr>
+					<td>No se han creado cuestionarios aún</td>
+                	<td>-</td>
+					<td>-</td>
+				</tr>
+			{% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}

@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Alumno | Academias
+    </title>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{STATIC_URL}}css/normalize.css">
+    <link rel="stylesheet" href="{{STATIC_URL}}css/alumnoIndex.css">
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/borrar_academia.css">
+{% block estilos %}{% endblock %}
+</head>
+<body>
+    <aside id="default-popup" class="avgrund-popup">
+        <h3>Material:</h3>
+        {% if documentos %}
+            <ul>
+                {% for documento in documentos %}
+                    <li id="lista"><a href="{{ documento.docfile.url }}">- {{ documento.titulo }}</a></li>
+                {% endfor %}    
+            </ul>
+        {% else %}
+            <p>Sin archivos</p>
+        {% endif %}
+        <button id="regresar" onclick="javascript:closeDialog();">Regresar</button>    
+    </aside>
+    <dir class="avgrund-contents">
+       <header class="row">
+            <a href="/Gaby/Alumno/" style="position:absolute; left:0; border:none; top:18px;"><h1 id="gaby">Gaby</h1></a>
+            <p>Bienvenido <span>{{user}}</span></p>
+            <a href="/logOut">Cerrar Sesión</a>
+        </header>
+        <div id="contenedor">
+            <div id="academias">
+            <h3>Cuestionarios pendientes: <span>{{CuestionariosActivos|length}}</span><button id="Material" onclick="openDialog();">Material</button></h3>
+                {% for elemento in CuestionariosActivos %}
+                    {% if elemento.activo %}
+                    <div class="cajaCuestionario">
+                        <p class="nombreCuestionarios">{{elemento.cuestionario}}</p>
+                        <p class="grupoCuestionarios">{{elemento.grupo}}</p>
+                        <form method="POST" action="../../../Cuestionario/">
+                            {% csrf_token %}
+                            <input type="hidden" value="{{elemento.id}}" name="id_cuestionario">
+                            <button class="submit" style="border:none; outline:none;">Resolver</button>
+                        </form>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div id="inscribirse">
+            {% for elemento in CuestionariosContestados %}
+                <div class="cajaContestado">
+                    <a href="#">{{elemento.relacion.cuestionario}}</a>
+                    <p>{{elemento.relacion.grupo}}</p>
+                    <p>Calificacion: {{elemento.alumno_cuestionario.calificacion}}</p>
+                </div>
+            {% empty %}
+                <h3>Nos has contestado cuestionarios aún</h3>
+            {% endfor %}
+            </div>           
+
+        </div>
+    </dir>
+    <script src="{{STATIC_URL}}js/academiaCuestionario.js">          
+            </script>
+</body>
+</html>

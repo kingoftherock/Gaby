@@ -1,0 +1,36 @@
+{% extends 'academia.html' %}
+    {% block estilos %} 
+        <link rel="stylesheet" href="{{STATIC_URL}}css/academiaMateriales.css" />
+    {% endblock %}
+    {% block menu %}
+        <li><a href='/Gaby/Academia/Cuestionarios'>Cuestionarios</a></li>
+        <li><a href="/Gaby/Academia/Maestros">Maestros</a></li>
+        <li><a href="/Gaby/Academia/Estadisticas">Estadísticas</a></li>
+        <li><a href="/Gaby/Academia/Alumnos">Alumnos</a></li>
+        <li><a href="/Gaby/Academia/Material" class="activo">Material</a></li>
+    {% endblock %}
+    {% block central %}
+        
+        <h2 >Material</h2>
+
+        <form action="{% url "materialAcademia" %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>Titulo: <input type="text" name="Titulo" id="titulo" required></p>
+            <p>{{form.non_file_errors}}</p>
+            <p>{{form.docfile.label_tag}}{{form.docfile.help_text}}</p>
+            <p>
+                {{form.docfile.errors}}
+                {{form.docfile}}
+            </p>
+            <input type="submit" id="submit" value="Subir">
+        </form>
+        {% if documentos %}
+            <ul>
+                {% for documento in documentos %}
+                    <li><a href="{{ documento.docfile.url }}">- {{ documento.titulo }}</a></li>
+                {% endfor %}    
+            </ul>
+        {% else %}
+            <p>Sin archivos</p>
+        {% endif %}    
+    {% endblock %}

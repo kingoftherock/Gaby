@@ -1,0 +1,130 @@
+body
+{
+    color: #3b3b3b;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+    margin: 0;
+}
+html
+{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#contenedor
+{
+    margin: 0 auto;
+    height: 100%;
+    padding: 1px;
+    position: relative;
+    width: 1000px;
+}
+#contenedor header
+{
+	border-bottom: solid #CDCFBA 1px; 
+    margin: 0 auto;
+    padding-top: 1em;
+    overflow: hidden;
+    width: 1000px;
+}
+header h1
+{
+	color: #42B8C4;
+    display: inline-block;
+    font-family: 'Lobster';
+    margin-top: 0;
+}
+header p
+{
+    display: inline-block;
+	float: right;
+}
+span
+{
+	font-weight: normal;
+}
+#buscarPregunta
+{
+    width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#BuscarPregunta
+{
+    width: 600px;
+    float: left;
+}
+input
+{
+    display: inline-block;
+    margin: 0;
+    width: 152px
+}
+#BuscarPreguntaBoton
+{
+    border: none;
+    float: right;
+}
+input
+{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: 0;
+    border-bottom: 2px dotted #0a7ec0;
+    font-size: 14px;
+    font-weight: 100;
+    margin: 5px 0;
+    padding: 10px;
+}
+input:focus
+{
+    outline: none;
+}
+#central
+{
+	width: 820px;
+	margin: 0 auto;
+	margin-top: 3em;
+}
+.academiaCaja
+{
+	height: 150px;
+	float: left;
+	margin: 1em 20px;
+	position: relative;
+	width: 230px;
+}
+.academiaCaja h2
+{
+	text-align: center;
+	font-size: 17px;
+}
+.academiaCaja .usuarioAcademia
+{
+	text-align: center;
+}
+.botonInscribirse
+{
+	background: #215f8b;
+	color: white;
+	border: none;
+	display: block;
+	margin: 0 auto;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+.suscrito
+{
+	background: #7dc36b;
+}
+#mostrarTodos a
+{
+	background: #444;
+	color: white;
+	text-decoration: none;
+	padding: .6em 1em;
+}

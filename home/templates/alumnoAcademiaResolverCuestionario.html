@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Alumno | Academias
+    </title>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{STATIC_URL}}css/normalize.css">
+    <link rel="stylesheet" href="{{STATIC_URL}}css/alumnoIndex.css">
+{% block estilos %}{% endblock %}
+</head>
+<body>
+   <header class="row">
+        <a href="/Gaby/Alumno/" style="position:absolute; left:0; border:none; top:18px;"><h1 id="gaby">Gaby</h1></a>
+        <p>Bienvenido <span>{{user}}</span></p>
+        <a href="/logOut">Cerrar Sesión</a>
+    </header>
+    <div id="contenedor">
+        <div id="central">
+        {% if mensaje %}
+            <h2>{{mensaje}}</h2>
+            <a href="/Gaby/Alumno" id="inscribir">Regresar!</a>
+        {% endif %}
+            {% for pregunta in preguntillas %}
+            <form class="pregunta" method="POST">
+                {% csrf_token %}
+                <input type="hidden" value="{{pregunta.pregunta.id}}" name="id">
+                <h4>{{pregunta.pregunta}}</h4>
+                <div class="respuestasArriba">
+                    <label class="incorrecta">
+                        <input type="radio" name="respuesta" value="{{pregunta.respuesta1}}"/>
+                        <p>
+                            {{pregunta.respuesta1}}
+                        </p>
+                    </label>  
+                    <label class="incorrecta">
+                        <input type="radio" name="respuesta" value="{{pregunta.respuesta2}}" />
+                        <p>
+                            {{pregunta.respuesta2}}
+                        </p>
+                    </label>  
+                </div>
+                <div class="respuestasAbajo">
+                    <label class="incorrecta">
+                        <input type="radio" name="respuesta" value="{{pregunta.respuesta3}}" />
+                        <p>
+                            {{pregunta.respuesta3}}
+                        </p>
+                    </label>  
+                    <label class="incorrecta">
+                        <input type="radio" name="respuesta" value="{{pregunta.respuesta4}}" />
+                        <p>
+                            {{pregunta.respuesta4}}
+                        </p>
+                    </label>  
+                </div>
+                <input type="submit" value="Enviar Respuesta" class="botonEnviarPregunta"/>
+            </form>
+            {% endfor %}
+        </div>     
+
+    </div>
+</body>
+</html>

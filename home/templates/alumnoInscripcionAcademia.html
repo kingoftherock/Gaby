@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Gaby - Alumno</title>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{STATIC_URL}}css/normalize.css" />
+    <link rel="stylesheet" href="{{STATIC_URL}}css/alumnoInscripcionAcademia.css" />
+    <link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico" type="image/x-icon" />
+	{% block estilos %}{% endblock %}
+</head>
+<body>
+    <div id="contenedor">
+	   <header>
+            <a href="/Gaby/Alumno/" style="position:absolute; left:0; border:none; top:18px;"><h1 id="gaby">Gaby</h1></a>
+            <p>Bienvenido <span>{{user}}</span></p>
+        </header>
+        <div id="central">
+        	<div id="buscarPregunta">
+            	<form method="GET">
+                	<input type="text" name="nombre" id="BuscarPregunta" placeholder="Buscar Academia">
+                	<input type="submit" id="BuscarPreguntaBoton" name="enviar" value="Buscar">
+	            </form>  
+        	</div>
+        	{% for elemento in resultados %}
+        		<p id="mostrarTodos"><a href="/Gaby/Alumno/Inscribirse" />Mostrar todos los profesores</a></p>
+        		{% if academia in academiasSuscritas %}
+        			<div class="academiaCaja">
+                    		<h2>{{academia.academia.first_name}}</h2>
+                    		<p class="usuarioAcademia">Usuario: <span>{{academia.academia.username}}</span></p>
+                    		<form method="post" action="">
+                    			{% csrf_token %}
+                    			<input name="academia" type="hidden" value="{{academia.id}}">
+                    			<input class="botonInscribirse suscrito" type="submit" value="Suscrito">
+                    		</form>
+            		</div>
+            		{% else %}
+            		<div class="academiaCaja">
+                    		<h2>{{academia.academia.first_name}}</h2>
+                    		<p class="usuarioAcademia">Usuario: <span>{{academia.academia.username}}</span></p>
+                    		<form method="post" action="">
+                    			{% csrf_token %}
+                    			<input name="academia" type="hidden" value="{{academia.id}}">
+                    			<input class="botonInscribirse" type="submit" value="Inscribirse">
+                    		</form>
+            		</div>
+            		{% endif %}
+            {% empty %}
+            	{% for academia in academias %}
+	            	{% if academia in academiasSuscritas %}
+        			<div class="academiaCaja">
+                    		<h2>{{academia.academia.first_name}}</h2>
+                    		<p class="usuarioAcademia">Usuario: <span>{{academia.academia.username}}</span></p>
+                    		<form method="post" action="">
+                    			{% csrf_token %}
+                    			<input name="academia" type="hidden" value="{{academia.id}}">
+                    			<input class="botonInscribirse suscrito" type="submit" value="Suscrito">
+                    		</form>
+            		</div>
+            		{% else %}
+            		<div class="academiaCaja">
+                    		<h2>{{academia.academia.first_name}}</h2>
+                    		<p class="usuarioAcademia">Usuario: <span>{{academia.academia.username}}</span></p>
+                    		<form method="post" action="">
+                    			{% csrf_token %}
+                    			<input name="academia" type="hidden" value="{{academia.id}}">
+                    			<input class="botonInscribirse" type="submit" value="Inscribirse">
+                    		</form>
+            		</div>
+            		{% endif %}
+            	{% endfor %}
+        	{% endfor %}
+			
+        </div>
+    </div>
+</html>

@@ -1,0 +1,51 @@
+{% extends 'academia.html' %}
+    {% block estilos %} 
+        <link rel="stylesheet" href="{{STATIC_URL}}css/academiaAlumnos.css" />
+        <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/roundSwitch(AcademiaAlumnos).css">
+        <script src="http://code.jquery.com/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="{{STATIC_URL}}js/roundSwitch(AcademiaAlumnos).js"></script>
+    {% endblock %}
+    {% block menu %}
+        <li><a href='/Gaby/Academia/Cuestionarios'>Cuestionarios</a></li>
+        <li><a href="/Gaby/Academia/Maestros">Maestros</a></li>
+        <li><a href="/Gaby/Academia/Estadisticas">Estadísticas</a></li>
+        <li><a href="/Gaby/Academia/Alumnos" class="activo">Alumnos</a></li>
+        <li><a href="/Gaby/Academia/Material">Material</a></li>
+    {% endblock %}
+    {% block central %}
+        <h2>Incripción de alumnos</h2>
+        <div id="cajaInscripciontes">
+            {% if academia.estado %}
+                <p>Las inscripciones están activas</p>
+            {% else %}
+                <p>Las inscripciones están inactivas</p>
+            {% endif %}
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="Switch Off" id="nose">
+                    <div class="Toggle"></div>
+                    <span class="On">OFF</span>
+                    <span class="Off">ON</span>
+                </div>
+                <br>
+                <br>
+                <input id="marcarCasilla" name="estado" type="checkbox"
+                {% if academia.estado %}
+                    checked 
+                {% else %}
+                {% endif %}
+                >
+                <input id="botonEnviar" type="submit" value="Actualizar estado">
+            </form>
+        </div>
+
+        <div id="grupos">
+            {% for grupo in grupos %}
+                <div class="grupo" method="post">
+                    {% csrf_token %}
+                    <a name="grupo" class="grupoNombre" href="Grupo/{{grupo.id}}">{{grupo.nombre}}</a>
+                    <p class="labelProfe">Profesor: <span>{{grupo.academia_profesor.profesor.profesor.first_name}} {{grupo.academia_profesor.profesor.profesor.last_name}}</span></p>
+                </div>
+            {% endfor %}
+            </div>
+    {% endblock %}
